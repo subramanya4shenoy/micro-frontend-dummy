@@ -6,7 +6,7 @@ on:
     branches:
       - master
     paths:
-      - "micro-frontend2/container/**"
+      - "container/**"
 
 defaults:
   run:
