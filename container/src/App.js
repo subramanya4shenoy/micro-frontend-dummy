@@ -3,7 +3,7 @@ import { MarketingApp } from './components/MarketingApp'
 
 export default () => {
     return  <>
-    hi there!
+    hi there!!
     <MarketingApp/>
     </>
 }
