@@ -1,21 +1,22 @@
 import React from 'react';
-import ReactDom from 'react-dom';
+import ReactDOM from 'react-dom';
 import App from './App';
 
-//mount function
+// Mount function to start up the app
 const mount = (el) => {
-    ReactDom.render(<App/>, el)
+  ReactDOM.render(<App />, el);
+};
+
+// If we are in development and in isolation,
+// call mount immediately
+if (process.env.NODE_ENV === 'development') {
+  const devRoot = document.querySelector('#_marketing-dev-root');
+
+  if (devRoot) {
+    mount(devRoot);
+  }
 }
 
-//if we are in dev mode and in isolation 
-//load all imediately
-if(process.env.NODE_ENV == 'development') {
-    let devRoot = document.querySelector('#_marketing-dev-root');
-    if(devRoot) {
-        mount(devRoot);
-    }
-}
-
-//if on prod we are running on container 
-//mount the comp in container
-export {mount}
+// We are running through container
+// and we should export the mount function
+export { mount };
